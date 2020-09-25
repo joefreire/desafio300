@@ -1,0 +1,84 @@
+{
+	"variables": [],
+	"info": {
+		"name": "strava",
+		"_postman_id": "d2502434-ff01-dbbb-6589-e2dbb32a9a36",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "strava webhook",
+			"request": {
+				"url": "https://api.strava.com/api/v3/push_subscriptions",
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "client_id",
+							"value": "29476",
+							"type": "text"
+						},
+						{
+							"key": "client_secret",
+							"value": "01a800c3b9dec6c6f46735dbca449ad5d5f5cd6a",
+							"type": "text"
+						},
+						{
+							"key": "callback_url",
+							"value": "http://0ae6d066.ngrok.io/strava/webhook",
+							"type": "text"
+						},
+						{
+							"key": "verify_token",
+							"value": "f0bd53ae309cb7ccb98df052aff86346663c4dbc",
+							"type": "text"
+						}
+					]
+				},
+				"description": null
+			},
+			"response": []
+		},
+		{
+			"name": "get atividade por id",
+			"request": {
+				"url": {
+					"raw": "https://www.strava.com/api/v3/activities/1925199483?include_all_efforts=false",
+					"protocol": "https",
+					"host": [
+						"www",
+						"strava",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"activities",
+						"1925199483"
+					],
+					"query": [
+						{
+							"key": "include_all_efforts",
+							"value": "false\n",
+							"equals": true
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Authorization: Bearer b32bc103d9020e54a1c0e545f71e1676820d8c0a"
+					}
+				],
+				"body": {},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
